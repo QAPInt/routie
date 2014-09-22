@@ -19,8 +19,6 @@
 }(typeof window !== "undefined" ? window : this, function (w){
 	var routes = [];
 	var map = {};
-	//var reference = "routie";
-	//var oldReference = exports;
 
 	var Route = function(path, name) {
 		this.name = name;
@@ -169,8 +167,7 @@
 	};
 
 	routie.noConflict = function() {
-		//exports = oldReference;
-		//return routie;
+		return routie;
 	};
 
 	var getHash = function() {
