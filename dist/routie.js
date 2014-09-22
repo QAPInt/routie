@@ -11,16 +11,16 @@
 		define(['exports'], factory);
 	} else if (typeof exports === 'object') {
 		// CommonJS
-		factory(exports);
+		module.exports = factory(window);
 	} else {
 		// Browser globals
-		factory(root);
+		root.routie = factory(window);
 	}
 }(typeof window !== "undefined" ? window : this, function (w){
 	var routes = [];
 	var map = {};
-	var reference = "routie";
-	var oldReference = w[reference];
+	//var reference = "routie";
+	//var oldReference = exports;
 
 	var Route = function(path, name) {
 		this.name = name;
@@ -169,8 +169,8 @@
 	};
 
 	routie.noConflict = function() {
-		w[reference] = oldReference;
-		return routie;
+		//exports = oldReference;
+		//return routie;
 	};
 
 	var getHash = function() {
@@ -213,6 +213,6 @@
 	};
 	addListener();
 
-	w[reference] = routie;
+	return routie;
 
 }));
