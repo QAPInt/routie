@@ -1,6 +1,7 @@
 {
   "name": "routie",
   "version": "0.0.0",
+  "main": "dist/routie.js",
   "private": true,
   "devDependencies": {
     "mocha": "~1.9.0",
